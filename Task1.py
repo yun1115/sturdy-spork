@@ -28,7 +28,7 @@ def number_counts(list):
 	for number in numbers_all:
 		if number not in number_only:
 			number_only.append(number)
-	return len(number_only)
+	return "There are {} different telephone numbers in the records.".format(len(number_only))
 
 list = texts + calls
 print(number_counts(list))
