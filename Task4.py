@@ -39,7 +39,7 @@ def number_counts(list):
 			numbers_except_call_only.append(number)
 
 	numbers_call_only = []
-	for number in numbers_call_all:
+	for number in sored(numbers_call_all):
 		if number not in numbers_call_only:
 			numbers_call_only.append(number)
 
