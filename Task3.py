@@ -54,7 +54,7 @@ def codes(calls):
 
 	print("The numbers called by people in Bangalore have codes:")
 	code = ''
-	for i in codes_only :
+	for i in sorted(codes_only) :
 		code += '{}\n'.format(i)
 	return code
 	
@@ -93,7 +93,7 @@ def percentage(calls):
 			code_eighty += 1
 
 
-	percentage_eighty = "%.2f"%(code_eighty/len(codes_all))
+	percentage_eighty = "%.2f"%(code_eighty/len(codes_all)*100)
 	return "{} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.".format(percentage_eighty)
 
 
