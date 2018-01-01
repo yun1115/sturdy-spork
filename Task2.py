@@ -42,11 +42,11 @@ def longest_call(calls):
 		number_time[i[0]] += int(i[3])
 		number_time[i[1]] += int(i[3])
 
-	counts = []
-	for a in number_time:
-		counts.append(number_time[a])
+	number_time_a = sorted(number_time.items(),key = lambda item:item[1])
 
-	return max(counts)
+	return "{} spent the longest time, {} seconds, on the phone during September 2016.".format(number_time_a[-1][0], number_time_a[-1][1])
+
+
 
 print(longest_call(calls))
 
