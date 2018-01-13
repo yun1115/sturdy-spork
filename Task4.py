@@ -26,33 +26,27 @@ with open('calls.csv', 'r') as f:
 电话号码不能重复，每行打印一条，按字典顺序排序后输出。
 """
 
-def number_counts(list):
-	numbers_except_call_all = []
-	numbers_call_all = []
-	for i in list:
-		numbers_except_call_all.append(i[1])
-		numbers_call_all.append(i[0])
-		
-	numbers_except_call_only = []
-	for number in numbers_except_call_all:
-		if number not in numbers_except_call_only:
-			numbers_except_call_only.append(number)
+numbers_except_call = []
+numbers_call_all = []
+for i in calls:
+	numbers_except_call.append(i[1])
+	numbers_call_all.append(i[0])
+	
+for i in texts:
+	numbers_except_call.append(i[0])
+	numbers_except_call.append(i[1])
 
-	numbers_call_only = []
-	for number in sorted(numbers_call_all):
-		if number not in numbers_call_only:
-			numbers_call_only.append(number)
+numbers_call_only = []
+for number in numbers_call_all:
+	if number not in numbers_call_only:
+		numbers_call_only.append(number)
 
-	market = ''
-	for number in numbers_call_only:
-		if number not in numbers_except_call_only:
-			market += '{}\n'.format(number)
+market = ''
+for number in numbers_call_only:
+	if number not in numbers_except_call:
+		market += '{}\n'.format(number)
 
 
-	print("These numbers could be telemarketers:")
+print("These numbers could be telemarketers:")
 
-	return market
-
-
-list = texts + calls
-print(number_counts(list))
+print(market)
