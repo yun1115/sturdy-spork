@@ -41,8 +41,11 @@ for number in numbers_call_all:
 	if number not in numbers_call_only:
 		numbers_call_only.append(number)
 
+numbers_call_only_a = sorted(numbers_call_only)
+		
+		
 market = ''
-for number in numbers_call_only:
+for number in numbers_call_only_a:
 	if number not in numbers_except_call:
 		market += '{}\n'.format(number)
 
