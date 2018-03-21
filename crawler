@@ -1,0 +1,34 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
+"""
+return a string corresponding to the URL of douban movie lists given category and location.
+"""
+
+def getMovieUrl(category, location):
+	url = 'https://movie.douban.com/tag/#/?sort=S&range=9,10&tags=电影,{},{}'.format(category, location)
+	return url
+
+#url = getMovieUrl('剧情', '美国')
+
+import expanddouban
+html = expanddouban.getHtml(url)
+
+class Movie:
+	def __init__(self, name, rate, location, category, info_link, cover_link):
+		self.name = name
+		self.rate = rate
+		self.location = location
+		self.category = category
+		self.info_link = info_link
+		self.cover_link = cover_link
+#print(html)
+
+"""
+return a list of Movie objects with the given category and location.
+"""
+def getMovies(category, location):
+
+
+
+	return []
